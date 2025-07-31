@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheena-Telegram Standard Refund Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <h1>Sheena</h1>
+    <div class="menu">☰</div>
+  </header>
+
+  <main>
+    <h2>Telegram Standard Refund Calculator</h2>
+    <p>Subscription Refund Calculator</p>
+
+    <h5>Subscription Price</h5>
+    <input type="number" id="price" placeholder="Enter subscription price">
+    <h5>Total Subscription Days</h5>
+    <input type="number" id="totalDays" placeholder="Enter total subscription days">
+    <h5>Remaining Days</h5>
+    <input type="number" id="remainingDays" placeholder="Enter remaining days">
+
+    <h5>Service Fee</h5>
+    <select id="serviceFee">
+      <option value="1">No service fee</option>
+      <option value="0.9">90% Service Fee</option>
+      <option value="0.8">80% Service Fee</option>
+      <option value="0.7">70% Service Fee</option>
+    </select>
+
+    <button onclick="calculateRefund()">Calculate Refund</button>
+    <button onclick="calculateCommission()">Commission Calculator</button>
+
+    <p id="result"></p>
+  </main>
+
+  <footer>
+    © 2025 Sheena. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>  
+</body>
+</html>
