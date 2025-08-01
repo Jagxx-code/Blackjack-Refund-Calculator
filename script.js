@@ -17,6 +17,8 @@ function calculateRefund() {
       alert("Commission Calculator coming soon!");
     }
 
+
+document.addEventListener('DOMContentLoaded', () => {    
 const form = document.getElementById('refundForm');
 
 form.addEventListener('submit', e => {
@@ -43,4 +45,4 @@ form.addEventListener('submit', e => {
     alert('Error: ' + error.message);
   });
 });
-
+});
