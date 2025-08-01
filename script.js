@@ -17,14 +17,22 @@ function calculateRefund() {
       alert("Commission Calculator coming soon!");
     }
 
-fetch('https://script.google.com/macros/s/AKfycbxC8uWUwt4lIZwEGBKGkPahfbiR6utHpGdwNRGrRJxH3IsRW4ZkVb8jRDa9FCJoojpqww/exec', {
+fetch('Yhttps://script.google.com/macros/s/AKfycbxC8uWUwt4lIZwEGBKGkPahfbiR6utHpGdwNRGrRJxH3IsRW4ZkVb8jRDa9FCJoojpqww/exec', {
   method: 'POST',
-  body: JSON.stringify(data),
-  mode: 'no-cors',
-  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    price: form.price.value,
+    totalDays: form.totalDays.value,
+    remainingDays: form.remainingDays.value,
+    serviceFee: form.serviceFee.value
+  }),
+  headers: {
+    'Content-Type': 'application/json'
+  }
 })
-.then(() => {
-  alert('Data submitted!');
+.then(res => res.json())
+.then(response => {
+  alert('Submitted successfully!');
   form.reset();
 })
-.catch(err => alert('Submission failed: ' + err.message));
+.catch(error => alert('Error: ' + error.message));
+
