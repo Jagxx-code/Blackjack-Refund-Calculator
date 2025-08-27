@@ -6,42 +6,60 @@
     <title>Sheena-Telegram Standard Refund Calculator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
+
 <body>
-    <header>
+  <header>
     <h1>Blackjack</h1>
     <div class="menu">☰</div>
   </header>
 
+<form>
   <main>
     <h2>Telegram Standard Refund Calculator</h2>
     <p><i>Subscription Refund Calculator</i></p>
-  <form id="refundForm">
-    <h5>Subscription Price</h5>
-    <i class="fa-solid fa-peso-sign"></i>
-    <input type="number" id="price" placeholder="Enter subscription price" required>
-    <h5>Total Subscription Days</h5>
-    <i class="fa-solid fa-credit-card"></i>
-    <input type="number" id="totalDays" placeholder="Enter total subscription days" required>
-    <h5>Remaining Days</h5>
-    <i class="fa-solid fa-calendar-days"></i>
-    <input type="number" id="remainingDays" placeholder="Enter remaining days" required>
 
-    <h5>Service Fee</h5>
-    <select id="serviceFee" name="serviceFee">
-      <option value="0">No service fee</option>
-      <option value="1.0">100% Service Fee</option>
-      <option value="0.9">90% Service Fee 25-30 Remaining Days</option>
-      <option value="0.8">80% Service Fee</option>
-      <option value="0.7">70% Service Fee</option>
-    </select>
+    <div class="form-group">
+      <h5>Subscription Price</h5>
+      <div class="input-wrapper">
+        <i class="fa-solid fa-peso-sign"></i>
+        <input type="number" id="price" placeholder="Enter Subscription Price" required>
+      </div>
+    </div>
 
-    <button onclick="calculateRefund()">Calculate Refund</button>
-    <button onclick="calculateCommission()">Commission Calculator</button>
-    <button type="submit">Submit to Google Sheet</button>
+    <div class="form-group">
+      <h5>Subscription Days</h5>
+      <div class="input-wrapper">
+        <i class="fa-solid fa-credit-card"></i>
+        <input type="number" id="totalDays" placeholder="Enter Total Subscription Days">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <h5>Remaining Days</h5>
+      <div class="input-wrapper">
+        <i class="fa-solid fa-calendar-days"></i>
+        <input type="number" id="remainingDays" placeholder="Enter Remaining Days">
+      </div>
+    </div>
+
+    <div class="form-group center">
+      <h5>Service Fee</h5>
+      <select id="serviceFee" name="serviceFee">
+        <option value="0">No Service Fee</option>
+        <option value="1.0">100% Service Fee 1 to 3 Days Used</option>
+        <option value="0.9">90% Service Fee 4 to 7 Days Used</option>
+        <option value="0.8">80% Service Fee 8 to 15 Days Used</option>
+        <option value="0.7">70% Service Fee 16+ Days Used</option>
+      </select>
+    </div>
+
+    <div class="button-group">
+      <button type="button" onclick="calculateRefund()">Calculate Refund</button>
+      <button type="button" onclick="calculateCommission()">Commission Calculator</button>
+    </div>
   </form>
-  
+
   <p id="result"></p>
   </main>
 
@@ -49,6 +67,6 @@
     © 2025 Gizibae. All rights reserved.
   </footer>
 
-  <script src="script.js"></script>  
+  <script src="script.js"></script>
 </body>
 </html>

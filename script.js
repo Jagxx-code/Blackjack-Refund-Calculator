@@ -16,33 +16,3 @@ function calculateRefund() {
     function calculateCommission() {
       alert("Commission Calculator coming soon!");
     }
-
-
-document.addEventListener('DOMContentLoaded', () => {    
-const form = document.getElementById('refundForm');
-
-form.addEventListener('submit', e => {
-  e.preventDefault();
-
-  const data = {
-    price: form.price.value,
-    totalDays: form.totalDays.value,
-    remainingDays: form.remainingDays.value,
-    serviceFee: form.serviceFee.value
-  };
-
-  fetch('https://script.google.com/macros/s/AKfycbxC8uWUwt4lIZwEGBKGkPahfbiR6utHpGdwNRGrRJxH3IsRW4ZkVb8jRDa9FCJoojpqww/exec', {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: { 'Content-Type': 'application/json' }
-  })
-  .then(res => res.json())
-  .then(response => {
-    alert('Submitted successfully!');
-    form.reset();
-  })
-  .catch(error => {
-    alert('Error: ' + error.message);
-  });
-});
-});
