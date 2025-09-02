@@ -122,3 +122,56 @@ input, select, button {
   color: #000;
   pointer-events: none; /* icon won’t block typing */
 }
+
+#datePopup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+#datePopup input {
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%;
+}
+
+#datePopup button {
+  width: auto;
+  margin: 10px auto 0 auto;
+  display: block;
+  padding: 8px 12px;
+  border: none;
+  background: #00f7ff;
+  color: #000;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#calendarIcon i {
+  pointer-events: auto;
+  cursor: pointer;
+  color: #000; /* optional highlight */
+}
+
+#datePopup .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.9em;
+  color: #aaa;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+#datePopup .close-btn:hover {
+  color: #fff;
+}

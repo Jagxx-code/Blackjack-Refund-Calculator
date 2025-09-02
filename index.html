@@ -39,7 +39,9 @@
       <div class="form-group">
         <h5>Remaining Days</h5>
         <div class="input-wrapper">
+          <span id="calendarIcon" style="cursor:pointer;">
           <i class="fa-solid fa-calendar-days"></i>
+          </span>
           <input type="number" id="remainingDays" placeholder="Enter Remaining Days">
         </div>
       </div>
@@ -72,6 +74,17 @@
   <footer>
     © 2025 Gizibae. All rights reserved.
   </footer>
+
+<div id="datePopup">
+  <span class="close-btn" onclick="closePopup()">× Close</span>
+  <h3>Select Dates</h3>
+  <label>Start Date:</label>
+  <input type="date" id="startDate">
+  <label>End Date:</label>
+  <input type="date" id="endDate">
+  <button onclick="setRemainingDays()">Set Remaining Days</button>
+</div>
+ 
 
   <script src="script.js"></script>
 </body>
