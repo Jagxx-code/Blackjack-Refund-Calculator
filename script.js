@@ -28,22 +28,29 @@ document.getElementById("calendarIcon").addEventListener("click", function() {
     });
 
     // Calculate remaining days from start and end date
-    function setRemainingDays() {
-      const start = new Date(document.getElementById("startDate").value);
-      const end = new Date(document.getElementById("endDate").value);
+    // Calculate remaining days from start and end date
+function setRemainingDays() {
+  const start = new Date(document.getElementById("startDate").value);
+  const end = new Date(document.getElementById("endDate").value);
+  const totalDays = parseFloat(document.getElementById("totalDays").value);
 
-      if (start && end && end > start) {
-        const diffTime = Math.abs(end - start);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        document.getElementById("remainingDays").value = diffDays;
-      } else {
-        alert("Please select valid dates (End Date must be after Start Date).");
-      }
+  if (start && end && end > start && !isNaN(totalDays)) {
+    const diffTime = Math.abs(end - start);
+    const usedDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-      // Close popup after calculation
-      document.getElementById("datePopup").style.display = "none";
+    // Remaining days = totalDays - usedDays
+    const remaining = totalDays - usedDays;
+
+    if (remaining >= 0) {
+      document.getElementById("remainingDays").value = remaining;
+    } else {
+      alert("Used days exceed the total days!");
+      document.getElementById("remainingDays").value = 0;
     }
+  } else {
+    alert("Please select valid dates (End Date must be after Start Date) and enter Total Days.");
+  }
 
-function closePopup() {
+  // Close popup after calculation
   document.getElementById("datePopup").style.display = "none";
 }
