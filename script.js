@@ -28,8 +28,7 @@ document.getElementById("calendarIcon").addEventListener("click", function() {
     });
 
     // Calculate remaining days from start and end date
-    // Calculate remaining days from start and end date
-function setRemainingDays() {
+  function setRemainingDays() {
   const start = new Date(document.getElementById("startDate").value);
   const end = new Date(document.getElementById("endDate").value);
   const totalDays = parseFloat(document.getElementById("totalDays").value);
@@ -54,3 +53,8 @@ function setRemainingDays() {
   // Close popup after calculation
   document.getElementById("datePopup").style.display = "none";
 }
+
+function closePopup() {
+  document.getElementById("datePopup").style.display = "none";
+}
+

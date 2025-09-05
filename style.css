@@ -1,175 +1,248 @@
-body {
+/* === Global Reset & Base === */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #111;
-  color: #fff;
-  height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0f0f;
+  color: #f5f5f5;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Header === */
 header {
-  background-color: #00f7ff;
+  background: linear-gradient(90deg, #00f7ff, #00c2ff);
   color: #000;
-  padding: 10px;
+  padding: 16px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
 header h1 {
-  font-size: 1.2em;
-  margin: 0;
+  font-size: 1.6em;
+  font-weight: 700;
 }
 
- header .menu {
-  background-color: #333;
-  padding: 6px 10px;
-  border-radius: 5px;
+header .menu {
+  background: #1c1c1c;
+  padding: 8px 14px;
+  border-radius: 6px;
   cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.3s ease;
 }
 
+header .menu:hover {
+  background: #2a2a2a;
+}
+
+/* === Main Content === */
 main {
-  padding: 20px;
+  flex: 1;
+  padding: 40px 20px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.4em;
-  margin-bottom: 10px;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #00f7ff;
 }
-    
+
 h5 {
   text-align: left;
-  margin-left: 25px;
-  margin-bottom: 0px;
+  font-weight: 500;
+  color: #ccc;
+  margin-bottom: 6px;
 }
 
+/* === Buttons === */
 button {
   width: 100%;
-  max-width: 300px;
-  background-color: #222;
-  color: #fff;
+  max-width: 320px;
+  background: linear-gradient(90deg, #00f7ff, #00c2ff);
+  color: #000;
   cursor: pointer;
-  padding: 10px;
-  padding-left: 30px;
-  border-radius: 5px;
+  padding: 14px;
+  border-radius: 10px;
   border: none;
   font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 194, 255, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* === Results === */
+#result {
+  margin-top: 25px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #00e5ff;
+}
+
+/* === Footer === */
 footer {
-  background-color: #222;
+  background-color: #1a1a1a;
   text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  font-size: 0.8em;
+  padding: 14px;
+  font-size: 0.85em;
+  color: #aaa;
+  border-top: 1px solid #333;
+  margin-top: auto;
 }
 
+/* === Forms === */
 .form-group {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centers the input box */
-  margin-bottom: 15px;
+  align-items: center;
+  margin-bottom: 18px;
 }
 
-/* Labels above textboxes */
 .form-group h5 {
-  text-align: left;
   width: 90%;
   max-width: 300px;
-  margin: 0 0 5px 0; /* space between label and input */
+  margin: 0 0 6px 0;
 }
 
-/* Shared style for inputs, selects, and buttons */
-input, select, button {
+/* Inputs & Selects */
+input, select {
   width: 100%;
   max-width: 300px;
-  padding: 10px;
-  padding-left: 35px; /* space for the icon */
-  border-radius: 5px;
-  border: none;
+  padding: 12px 14px 12px 38px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1c1c1c;
+  color: #fff;
   font-size: 1em;
-  box-sizing: border-box; /* makes width consistent */
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
-/* Center only the Total Service Fee input */
-#totalServiceFee {
-  margin: 0 auto; /* override default */
-  display: block;
+input:focus, select:focus {
+  outline: none;
+  border-color: #00c2ff;
+  box-shadow: 0 0 6px rgba(0, 194, 255, 0.5);
 }
 
-/* Buttons centered */
-.button-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px; /* space between buttons */
-}
-
+/* Input Wrapper with Icon */
 .input-wrapper {
   position: relative;
   width: 100%;
   max-width: 300px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .input-wrapper i {
   position: absolute;
-  left: 10px;       /* position inside the box */
-  top: 50%;         /* vertically center */
+  left: 12px;
+  top: 50%;
   transform: translateY(-50%);
-  color: #000;
-  pointer-events: none; /* icon won’t block typing */
+  color: #00f7ff;
+  font-size: 1.1em;
+  pointer-events: none;
 }
 
+#calendarIcon i {
+  pointer-events: auto;
+  cursor: pointer;
+  color: #00f7ff;
+  transition: color 0.3s ease;
+}
+
+#calendarIcon i:hover {
+  color: #00c2ff;
+}
+
+/* Special Input Centering */
+#totalServiceFee {
+  margin: 0 auto;
+  display: block;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* === Popup (Modal) === */
 #datePopup {
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #222;
+  background: #1a1a1a;
   color: #fff;
-  padding: 20px;
+  padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
   z-index: 1000;
+  max-width: 360px;
+  width: 90%;
 }
 
 #datePopup input {
-  margin: 5px 0;
-  padding: 5px;
+  margin: 6px 0;
+  padding: 10px;
   width: 100%;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
 }
 
 #datePopup button {
   width: auto;
-  margin: 10px auto 0 auto;
+  margin: 14px auto 0 auto;
   display: block;
-  padding: 8px 12px;
+  padding: 10px 18px;
   border: none;
   background: #00f7ff;
   color: #000;
-  border-radius: 8px;
+  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
-#calendarIcon i {
-  pointer-events: auto;
-  cursor: pointer;
-  color: #000; /* optional highlight */
+#datePopup button:hover {
+  background: #00c2ff;
 }
 
+/* Close Button */
 #datePopup .close-btn {
   position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 0.9em;
+  top: 10px;
+  right: 14px;
+  font-size: 1.1em;
   color: #aaa;
   cursor: pointer;
   background: none;
   border: none;
+  transition: color 0.3s;
 }
 
 #datePopup .close-btn:hover {
